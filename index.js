@@ -2,33 +2,41 @@
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
 
 
-
-
+let votingAge=18;
+const age=20;
+if (age > 18) {console.log(true)};
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
 
-
-
+let name = "Somayah";
+let bday = 3.13;
+if (bday != 10.27 ) {name = "Someone Else"};
+console.log(name);
 
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
 
-
-
-
+let year = "1999";
+console.log(Number(year) + 1);
 
 //Task d: Write a function to multiply a*b 
 
+function multiply(a,b){
+    return a*b;
+}
 
-
+console.log(multiply(5,9));
 
 
 /************************************************************** Task 2 **************************************************************/
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
 
+function dogYears(age){
+    return age*7;
+}
 
-
+console.log(dogYears(25));
 
 
 /************************************************************** Task 3 **************************************************************/
@@ -47,10 +55,37 @@
 // 4 - 7 months 5% of their body weight 
 // 7 - 12 months 4% of their body weight
 
+function dogFeeder(weight, age){
+    if (age >= 1){
+        if(weight <=5 ){
+            return weight*0.05;
+        }
+        else if(weight <=10){
+            return weight*0.04;
+        }
+        else if(weight <=15){
+            return 0.03*weight;
+        }
+        else {
+            return weight*0.02;
+        }
+    }
+    else {
+        if (age <= 1/3 && age > 1/6) {
+            return weight * 0.1;
+        }
+        else if(age <= 7/12){
+            return weight*0.05;
+        }
+        else if(age < 1 && age > 7/12){
+            return weight*0.04;
+        }
+    } 
+}
+
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
   
-
-
+console.log(dogFeeder(15,1));
 
 
 /************************************************************** Task 4 **************************************************************/
@@ -60,7 +95,39 @@
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
-  
+
+// scissors = 0, rock = 1, paper = 2
+function game(hand){
+    if (Math.floor(Math.random() * 3 ) === 0 && hand === "scissors"){
+        return "You tied!";
+    }
+    else if (Math.floor(Math.random() * 3) === 0 && hand === "rock"){
+        return "You won!";
+    }
+    else if(Math.floor(Math.random() * 3) === 0 && hand === "paper"){
+        return "You lost!";
+    }
+    else if (Math.floor(Math.random() * 3) === 1 && hand === "rock"){
+        return "You tied!";
+    }
+    else if (Math.floor(Math.random() * 3) === 1 && hand === "paper"){
+        return "You won!";
+    }
+    else if(Math.floor(Math.random() * 3) === 1 && hand === "scissors"){
+        return "You won!";
+    }
+    else if (Math.floor(Math.random() * 3) === 2 && hand === "paper"){
+        return "You tied!";
+    }
+    else if (Math.floor(Math.random() * 3) === 2 && hand === "scissors"){
+        return "You won!";
+    }
+    else if(Math.floor(Math.random() * 3) === 2 && hand === "rock"){
+        return "You won!";
+    }
+}
+
+console.log(game("rock"));
   
 
 /************************************************************** Task 5 **************************************************************/
