@@ -98,42 +98,39 @@ console.log(dogFeeder(15,1));
 
 // scissors = 0, rock = 1, paper = 2
 function game(hand){
-    if (Math.floor(Math.random() * 3 ) === 0 && hand === "scissors"){
+    let cHand= Math.floor(Math.random() * 3);
+    if (cHand === 0 && hand === "scissors"){
         return "You tied!";
     }
-    else if (Math.floor(Math.random() * 3) === 0 && hand === "rock"){
+    else if (cHand === 0 && hand === "rock"){
         return "You won!";
     }
-    else if(Math.floor(Math.random() * 3) === 0 && hand === "paper"){
+    else if(cHand === 0 && hand === "paper"){
         return "You lost!";
     }
-    else if (Math.floor(Math.random() * 3) === 1 && hand === "rock"){
+    else if (cHand === 1 && hand === "rock"){
         return "You tied!";
     }
-    else if (Math.floor(Math.random() * 3) === 1 && hand === "paper"){
+    else if (cHand === 1 && hand === "paper"){
         return "You won!";
     }
-    else if(Math.floor(Math.random() * 3) === 1 && hand === "scissors"){
+    else if(cHand === 1 && hand === "scissors"){
         return "You lost!";
     }
-    else if (Math.floor(Math.random() * 3) === 2 && hand === "paper"){
+    else if (cHand  === 2 && hand === "paper"){
         return "You tied!";
     }
-    else if (Math.floor(Math.random() * 3) === 2 && hand === "scissors"){
+    else if (cHand === 2 && hand === "scissors"){
         return "You won!";
     }
-    else if(Math.floor(Math.random() * 3) === 2 && hand === "rock"){
+    else if(cHand  === 2 && hand === "rock"){
         return "You lost!";
     }
 }
 
-//for(i=0; i<20; i++){
-//    console.log(game("rock"));
-//}
-
 for(i=0; i<20; i++){
-   console.log( Math.floor( Math.random() * 3));
-} 
+    console.log(game("rock"));
+}
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
