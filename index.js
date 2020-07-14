@@ -4,7 +4,7 @@
 
 let votingAge=18;
 const age=20;
-if (age > 18) {console.log(true)};
+if (age > votingAge) {console.log(true)};
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
 
@@ -114,7 +114,7 @@ function game(hand){
         return "You won!";
     }
     else if(Math.floor(Math.random() * 3) === 1 && hand === "scissors"){
-        return "You won!";
+        return "You lost!";
     }
     else if (Math.floor(Math.random() * 3) === 2 && hand === "paper"){
         return "You tied!";
@@ -123,24 +123,35 @@ function game(hand){
         return "You won!";
     }
     else if(Math.floor(Math.random() * 3) === 2 && hand === "rock"){
-        return "You won!";
+        return "You lost!";
     }
 }
 
-console.log(game("rock"));
-  
+//for(i=0; i<20; i++){
+//    console.log(game("rock"));
+//}
+
+for(i=0; i<20; i++){
+   console.log( Math.floor( Math.random() * 3));
+} 
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
 
+function customaryConverter(km){
+    return 0.621371 * km;
+}
 
-
-
+console.log(customaryConverter(4));
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
   
+function  metricConverter(feet){
+    return feet*30.48;
+}
 
+console.log(metricConverter(3));
 
 
 
@@ -149,8 +160,16 @@ console.log(game("rock"));
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
   
+function annoyingSong(bottles){
+    let c = bottles;
+    for (let i = 0; i < bottles; i++) {
+        console.log( c, "bottles of soda on the wall, " , c , "bottles of soda, take one down pass it around, " , (c-1) , "bottles of soda on the wall");
+        c--;
+    }
+    return;
+}
 
-
+annoyingSong(10);
 
 
 /************************************************************** Task 7 **************************************************************/
@@ -161,10 +180,26 @@ console.log(game("rock"));
 //70s should be Cs 
 //60s should be D 
 //and anything below 60 should be F
-  
 
-  
-  
+function gradeCalculator(number){
+    if(number<60){
+        return "F";
+    }
+    else if(number < 70){
+        return "D";
+    }
+    else if(number < 80){
+        return "C";
+    }
+    else if(number < 90){
+        return "B";
+    }
+    else {
+        return "A";
+    }
+}
+
+console.log(gradeCalculator(73.5));
 
 /************************************************************** Stretch **************************************************************/
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
